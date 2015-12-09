@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+
+  <!-- Latest compiled and minified CSS -->
+  
+  <!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
+
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  
+
+  <!-- Font Awesome -->
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+  
+  <!-- Custom CSS -->
+  <link rel='stylesheet' href='/stylesheets/magister.css'/>
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" id="bs-example-navbar-collapse-1">
+  <ul class="nav navbar-nav navbar-left">
+    <% if(title == "Home" ) { %>
+    <li class="active">
+      <% } else { %>
+    <li>
+      <% } %>
+      <a href="/">Home</a></li>
+    <li role="presentation" class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="/contacts" role="button" aria-haspopup="true" aria-expanded="false">
+        Survey <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <a href="/contacts/add"> <li>Template 1</li></a>
+        <a href="#"><li>Template 2</li></a>
+      </ul>
+    </li>
+    <li role="presentation"><a href="/contacts">Surveys</a> </li>
+    <li role="separator" class="divider"></li>
+    <% if (displayName) { %>
+    <% if(title == "users" ) { %>
+    <li class="active">
+      <% } else { %>
+    <li>
+      <% } %>
+      <a href="/users">Users</a></li>
+    <li class="navbar-text">Hello,
+      <%= displayName %>
+    </li>
+    <li><a href="/logout">Logout</a></li>
+    <% } else { %>
+    <% if(title == "Register" ) { %>
+    <li class="active">
+      <% } else { %>
+    <li>
+      <% } %>
+      <a href="/register">Register</a></li>
+    <% if(title == "Login" ) { %>
+    <li class="active">
+      <% } else { %>
+    <li>
+      <% } %>
+      <a href="/login">Login</a></li>
+    <% } %>
+  </ul> <!-- nav navbar-nav navbar-right -->
+</div> <!-- collapse navbar-collapse -->
